@@ -1,7 +1,7 @@
 function Display() {
   return (
-    <div>
-      0
+    <div className="display">
+      0.75
     </div>
   );
 }
