@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  background: #dcdcdc;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 220px;
+  margin: 50px auto;
+  background: #c0c0c0;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.display {
+  background: #666;
+  color: white;
+  font-size: 32px;
+  text-align: right;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background: #d5d5d5;
+}
+
+.operator {
+  background: orange;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.operator:hover {
+  background: darkorange;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.button {
+  padding: 18px;
+  font-size: 18px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.operator {
+  background: orange;
+  color: white;
+}
+
+/* Botão = maior */
+.button:last-child {
+  grid-column: span 2;
 }
