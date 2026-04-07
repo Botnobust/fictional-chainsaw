@@ -29,6 +29,9 @@ jobs:
     permissions:
       contents: read
       packages: write
+    defaults:
+      run:
+        working-directory: ./calculadora
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
