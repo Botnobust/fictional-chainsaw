@@ -1,35 +1,45 @@
+import { useState } from "react";
 import "./App.css";
-import Display from "./components/Display";
-import Button from "./components/Button";
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [mensagem, setMensagem] = useState("");
+
+  function validarLogin() {
+    if (
+      email === "eduardo.lino@pucpr.br" &&
+      senha === "123456"
+    ) {
+      setMensagem("Acessado com sucesso!");
+    } else {
+      setMensagem("Usuário ou senha incorretos!");
+    }
+  }
+
   return (
-    <div className="container">
-      <Display />
+    <div>
+      <h1>Login</h1>
 
-      <div className="buttons">
-        <Button label="AC" />
-        <Button label="9" />
-        <Button label="8" />
-        <Button label="/" />
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
 
-        <Button label="7" />
-        <Button label="6" />
-        <Button label="5" />
-        <Button label="*" />
+      <br />
 
-        <Button label="4" />
-        <Button label="3" />
-        <Button label="2" />
-        <Button label="-" />
+      <input
+        type="password"
+        value={senha}
+        onChange={(e) => setSenha(e.target.value)}
+      />
 
-        <Button label="1" />
-        <Button label="0" />
-        <Button label="." />
-        <Button label="+" />
+      <br />
 
-        <Button label="=" />
-      </div>
+      <button onClick={validarLogin}>Acessar</button>
+
+      <p>{mensagem}</p>
     </div>
   );
 }
