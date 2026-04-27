@@ -12,12 +12,23 @@ jobs:
     defaults:
       run:
         working-directory: ./calculadora
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+
       - run: npm ci
+
       - run: npm run build
         env:
           CI: true
+
+      - name: Enviar alerta para Discord
+        if: always()
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d "{\"content\": \"🚀 Build finalizado! Status: ${{ job.status }}\"}" \
+          ${{ secrets.DISCORD_WEBHOOK }}
