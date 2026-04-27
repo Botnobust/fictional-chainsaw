@@ -23,6 +23,7 @@ function App() {
 
       <input
         type="email"
+        placeholder="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
@@ -31,6 +32,7 @@ function App() {
 
       <input
         type="password"
+        placeholder="senha"
         value={senha}
         onChange={(e) => setSenha(e.target.value)}
       />
