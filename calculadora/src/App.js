@@ -1,50 +1,7 @@
-"TESTE PARA O DISCORD"
-import { useState } from "react";
-import "./App.css";
+import AppRoutes from "./routes/Routes";
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const [mensagem, setMensagem] = useState("");
-
-  function validarLogin() {
-    if (
-      email === "eduardo.lino@pucpr.br" &&
-      senha === "123456"
-    ) {
-      setMensagem("Acessado com sucesso!");
-    } else {
-      setMensagem("Usuário ou senha incorretos!");
-    }
-  }
-
-  return (
-    <div>
-      <h1>Login</h1>
-
-      <input
-        type="email"
-        placeholder="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <br />
-
-      <input
-        type="password"
-        placeholder="senha"
-        value={senha}
-        onChange={(e) => setSenha(e.target.value)}
-      />
-
-      <br />
-
-      <button onClick={validarLogin}>Acessar</button>
-
-      <p>{mensagem}</p>
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
