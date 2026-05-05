@@ -1,8 +1,10 @@
-console.log("CADASTRO");
 import { useState } from "react";
 import { auth, db } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import Nav from "../components/Nav";
+
+console.log("CADASTRO");
 
 function Cadastro() {
   const [email, setEmail] = useState("");
@@ -30,6 +32,7 @@ function Cadastro() {
 
   return (
     <div>
+      <Nav />
       <h1>Cadastro</h1>
 
       <input placeholder="email" onChange={(e) => setEmail(e.target.value)} />

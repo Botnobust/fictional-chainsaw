@@ -1,8 +1,10 @@
-console.log("LOGIN");
 import { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import Nav from "../components/Nav";
+
+console.log("LOGIN");
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,6 +24,7 @@ function Login() {
 
   return (
     <div>
+      <Nav />
       <h1>Login</h1>
 
       <input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
